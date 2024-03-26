@@ -35,7 +35,7 @@ public class UserService {
     public UserDTO deleteUser(String id){
         UserEntity userEntity = userRepository.findById(id).orElseThrow(() -> new NoSuchElementException("No user found with id: " + id));
         userRepository.deleteById(id);
-        logger.info("User with id: {} was deleted!", id);
+        logger.info("User with id: {} was deleted.", id);
 
         UserDTO dto = new UserDTO();
         dto.setId(userEntity.getId());
